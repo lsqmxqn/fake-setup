@@ -1,19 +1,19 @@
 #!/usr/bin/expect
 
-# 设置超时时间
 set timeout -1
 
-# 启动 PHP setup 脚本
 cd /var/www/html
 spawn php setup/setup.php install /var/www/config/minimal-config.json
 
-# 第一个交互问题
-expect -re "Please note that you are running this program at your own risk and with absolutely no warranty.*Are you fine with this\? \(yes/no\) \[no\]:"
-send "yes\r"
+expect {
+    -re ".*Are you fine with this.*" {
+        send "yes\r"
+        exp_continue
+    }
+    -re ".*If you still proceed.*" {
+        send "yes\r"
+        exp_continue
+    }
+}
 
-# 第二个交互问题
-expect -re "You seem to be using root or your user just can't be determined.*If you still proceed, carefully check file access rights in the data-directories after finishing the setup. \(yes/no\) \[no\]:"
-send "yes\r"
-
-# 结束expect脚本
 expect eof
