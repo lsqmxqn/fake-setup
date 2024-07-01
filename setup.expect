@@ -14,8 +14,7 @@ send "yes\r"
 
 # 处理第二个交互
 expect " You seem to be using root or your user just can't be determined. You should be running this setup with the same user the webserver uses. If this is not the case there might be problems accessing files via the web later...If you still proceed, carefully check file access rights in the data-directories
-after finishing the setup.
- (yes/no) [no]:"
+after finishing the setup. (yes/no) [no]:"
 send "yes\r"
 
 # 等待进程结束
