@@ -21,7 +21,7 @@ else
     mkdir -p /var/www/files
     chown -R www-data:www-data /var/www/files
 
-    php setup/setup.php install /var/www/config/minimal-config.json
+    expect /usr/local/bin/setup.expect
 fi
 
 # 启动 Apache 服务
