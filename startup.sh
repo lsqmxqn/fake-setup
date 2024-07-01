@@ -25,4 +25,4 @@ else
 fi
 
 # 启动 Apache 服务
-apache2 -foreground &
+apache2ctl -D FOREGROUND
