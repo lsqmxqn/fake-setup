@@ -8,11 +8,11 @@ cd /var/www/html
 spawn php setup/setup.php install /var/www/config/minimal-config.json
 
 # 第一个交互问题
-expect "Please note that you are running this program at your own risk and with absolutely no warranty. You should perform regular backups and thorough testing to prevent data loss or unpleasant surprises when running this program. Are you fine with this? (yes/no) [no]:"
+expect -re "Please note that you are running this program at your own risk and with absolutely no warranty.*Are you fine with this\? \(yes/no\) \[no\]:"
 send "yes\r"
 
 # 第二个交互问题
-expect "You seem to be using root or your user just can't be determined. You should be running this setup with the same user the webserver uses. If this is not the case there might be problems accessing files via the web later...If you still proceed, carefully check file access rights in the data-directories after finishing the setup. (yes/no) [no]:"
+expect -re "You seem to be using root or your user just can't be determined.*If you still proceed, carefully check file access rights in the data-directories after finishing the setup. \(yes/no\) \[no\]:"
 send "yes\r"
 
 # 结束expect脚本
