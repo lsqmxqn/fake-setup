@@ -14,11 +14,6 @@ expect {
         send "yes\r"
         exp_continue
     }
-    -re ".*Also.*" {
-        send "yes\r"
-        exp_continue
-    }
-
 }
 
 expect eof
