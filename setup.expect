@@ -1,6 +1,5 @@
 #!/usr/bin/expect
 
-
 # 设置超时时间
 set timeout -1
 
